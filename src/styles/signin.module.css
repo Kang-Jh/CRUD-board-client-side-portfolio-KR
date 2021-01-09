@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+.facebookLoginBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+  color: white;
+  padding: 2px 6px;
+  width: 245px;
+  border-radius: 5px;
+  border: 1px solid #4b7bdb;
+  box-shadow: 1px 1px 1px grey;
+  white-space: nowrap;
+  background-color: #4080ff;
+}
+
+.facebookLogo {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.facebookLoginText {
+  display: inline-block;
+  margin-left: 12px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.googleLoginBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.75);
+  padding: 2px 6px;
+  width: 245px;
+  border-radius: 5px;
+  border: thin solid #888;
+  box-shadow: 1px 1px 1px grey;
+  white-space: nowrap;
+}
+
+.googleLogo {
+  background-color: white;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.googleLoginText {
+  display: inline-block;
+  margin-left: 12px;
+  text-align: center;
+  vertical-align: middle;
+}

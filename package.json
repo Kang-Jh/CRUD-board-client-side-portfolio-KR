@@ -1,0 +1,45 @@
+{
+  "name": "create-next-example-app",
+  "author": "Kang Jae-hyeong",
+  "description": "Book Review Community Web front-end for users",
+  "private": true,
+  "license": "UNLICENSED",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest --watch",
+    "test:ci": "jest --ci",
+    "https": "node server.js"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.1.0",
+    "classnames": "^2.2.6",
+    "date-fns": "^2.16.1",
+    "ms": "^2.1.3",
+    "next": "^10.0.1",
+    "node-fetch": "^2.6.1",
+    "postcss": "^8.2.2",
+    "quill": "^1.3.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "tailwindcss": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.11",
+    "@types/ms": "^0.7.31",
+    "@types/node": "^14.14.7",
+    "@types/node-fetch": "^2.5.7",
+    "@types/quill": "^2.0.4",
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "devcert": "^1.1.3",
+    "eslint": "^7.13.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "typescript": "^4.0.5"
+  }
+}
