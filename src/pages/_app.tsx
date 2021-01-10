@@ -10,11 +10,6 @@ import useCsrfToken from '../hooks/useCsrfToken';
 import { AccessToken, User } from '../types/Data';
 import { AccessTokenResponseBody } from '../types/ResponseBody';
 
-/* eslint-disable no-undef */
-if (process.env.NODE_ENV !== 'production') {
-  require('../mocks');
-}
-
 const App = ({ Component, pageProps }: AppProps) => {
   const [accessToken, setAccessToken] = useState<AccessToken>('');
   const csrfToken = useCsrfToken('http://localhost:4000/browser/csrfToken');

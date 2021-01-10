@@ -5,7 +5,6 @@ import nodeFetch from 'node-fetch';
 import { AccessTokenContext } from '../contexts';
 import Link from '../components/link';
 import InfiniteScroller from '../components/infiniteScroller';
-import { mockURI } from '../mocks/handlers';
 import { Post } from '../types/Data';
 import useCursorAndOffset from '../hooks/useCursorAndOffset';
 import { constants } from '../utils';
@@ -14,7 +13,7 @@ import { ko } from 'date-fns/locale';
 
 const { POSTS_GET_LIMIT } = constants;
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const response = await nodeFetch(`${mockURI}/posts`);
+  const response = await nodeFetch(`http://localhost:4000/browser/posts`);
 
   if (!response.ok) {
     return {
@@ -56,7 +55,7 @@ const HomePage = ({ initialData }: { initialData: Post[] }) => {
     }
 
     const response = await fetch(
-      `${mockURI}/posts?cursor=${cursor}&offset=${offset}`
+      `http://localhost:4000/browser/posts?cursor=${cursor}&offset=${offset}`
     );
 
     if (response.ok) {
