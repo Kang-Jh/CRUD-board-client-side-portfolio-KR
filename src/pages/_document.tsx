@@ -37,7 +37,7 @@ class MyDocument extends Document {
               __html: `
               window.fbAsyncInit = function () {
                 window.FB.init({
-                  appId: 'facebook_app_id',
+                  appId: '225021689182411',
                   autoLogAppEvents: true,
                   xfbml: true,
                   version: 'v9.0',
@@ -57,7 +57,10 @@ class MyDocument extends Document {
 
           {/* --- google login tags start --- */}
           <meta name="google-signin-scope" content="email" />
-          <meta name="google-signin-client_id" content="google_client_id" />
+          <meta
+            name="google-signin-client_id"
+            content="542160721075-hruso9or8rvl61uehr484pp57g95pluq.apps.googleusercontent.com"
+          />
           <script src="https://apis.google.com/js/api:client.js" />
 
           {/* --- google login tags end --- */}
