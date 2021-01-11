@@ -12,7 +12,7 @@ import { formatDistanceToNow } from 'date-fns';
 import { ko } from 'date-fns/locale';
 
 const { POSTS_GET_LIMIT } = constants;
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const response = await nodeFetch(
     `https://api.simplecrudboard.click/browser/posts`
   );
