@@ -3,7 +3,7 @@
   "author": "Kang Jae-hyeong",
   "description": "Book Review Community Web front-end for users",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "version": "0.0.0",
   "scripts": {
     "dev": "next",
