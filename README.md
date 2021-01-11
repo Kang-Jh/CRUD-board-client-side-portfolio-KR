@@ -1,5 +1,7 @@
 # CRUD Board Portfolio - Client-side
 
+[CRUD Board](https://www.simplecrudboard.click)
+
 이 프로젝트는 포트폴리오용 게시판 프로젝트의 클라이언트 사이드를 구현한 프로젝트입니다.
 [서버 사이드 프로젝트](https://github.com/Kang-Jh/CRUD-board-server-side-portfolio-KR)와 연동되어 있습니다.
 
@@ -18,4 +20,9 @@ Next.js를 이용하였고, Tailwind CSS를 이용해 UI를 구현했습니다.
 
 글 페이지에는 무한 스크롤을 이용한 댓글 시스템이 구현되어 있으며, 글 또는 댓글을 삭제 시도시 모달 창을 띄우는 방식을 구현하였습니다.
 
-[CRUD Board Client-Side](https://example.com)
+## 기술 스택
+
+- ReactJS (Hooks Based)
+- NextJS
+- TailwindCSS
+- Typescript
