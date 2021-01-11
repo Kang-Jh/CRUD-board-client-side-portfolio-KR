@@ -28,7 +28,7 @@ export default function FacebookLoginButton({
 
           if (loginStatus?.status === 'connected') {
             const response = await fetch(
-              'http://localhost:4000/browser/signin',
+              'https://api.simplecrudboard.click/browser/signin',
               {
                 method: 'post',
                 mode: 'cors',
@@ -64,7 +64,7 @@ export default function FacebookLoginButton({
 
           if (userInfo && !userInfo.error) {
             const response = await fetch(
-              'http://localhost:4000/browser/signin',
+              'https://api.simplecrudboard.click/browser/signin',
               {
                 method: 'post',
                 mode: 'cors',

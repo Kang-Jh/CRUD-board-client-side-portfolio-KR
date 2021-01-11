@@ -16,10 +16,10 @@ import { ko } from 'date-fns/locale';
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const postId = context.params.id;
   const postResponse = nodeFetch(
-    `http://localhost:4000/browser/posts/${postId}`
+    `https://api.simplecrudboard.click/browser/posts/${postId}`
   );
   const commentsResponse = nodeFetch(
-    `http://localhost:4000/browser/comments?postId=${postId}`
+    `https://api.simplecrudboard.click/browser/comments?postId=${postId}`
   );
 
   const awaitedPostResponse = await postResponse;
@@ -192,7 +192,7 @@ const PostPage = ({ data }: { data: Post }) => {
           // if superCommentId exist
           // then fetch super comment's sub-comments
           const response = await fetch(
-            `http://localhost:4000/browser/comments?postId=${data._id}&superCommentId=${superCommentId}&cursor=${cursor}&offset=${offset}`
+            `https://api.simplecrudboard.click/browser/comments?postId=${data._id}&superCommentId=${superCommentId}&cursor=${cursor}&offset=${offset}`
           );
 
           if (!response.ok) {
@@ -205,7 +205,7 @@ const PostPage = ({ data }: { data: Post }) => {
         }
 
         const response = await fetch(
-          `http://localhost:4000/browser/comments?postId=${data._id}&cursor=${cursor}&offset=${offset}`
+          `https://api.simplecrudboard.click/browser/comments?postId=${data._id}&cursor=${cursor}&offset=${offset}`
         );
 
         if (!response.ok) {
@@ -232,7 +232,9 @@ const PostPage = ({ data }: { data: Post }) => {
     ) => (contents: string) => async () => {
       try {
         const formResponse = await fetch(
-          `http://localhost:4000/browser/comments/${commentId ?? ''}`,
+          `https://api.simplecrudboard.click/browser/comments/${
+            commentId ?? ''
+          }`,
           {
             method: commentId ? 'PUT' : 'POST',
             mode: 'cors',
@@ -308,7 +310,7 @@ const PostPage = ({ data }: { data: Post }) => {
       return async () => {
         try {
           const deleteResponse = await fetch(
-            `http://localhost:4000/browser/comments/${commentId}`,
+            `https://api.simplecrudboard.click/browser/comments/${commentId}`,
             {
               method: 'DELETE',
               mode: 'cors',
@@ -437,7 +439,7 @@ const PostPage = ({ data }: { data: Post }) => {
           onSubmit={async (e) => {
             e.preventDefault();
             const response = await fetch(
-              `http://localhost:4000/browser/posts/${data._id}`,
+              `https://api.simplecrudboard.click/browser/posts/${data._id}`,
               {
                 method: 'DELETE',
                 mode: 'cors',

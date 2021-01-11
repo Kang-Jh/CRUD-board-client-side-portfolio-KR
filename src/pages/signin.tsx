@@ -39,7 +39,7 @@ const SignInPage = () => {
               e.preventDefault();
 
               const response = await fetch(
-                'http://localhost:4000/browser/signin',
+                'https://api.simplecrudboard.click/browser/signin',
                 {
                   method: 'POST',
                   mode: 'cors',

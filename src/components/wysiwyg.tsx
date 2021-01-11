@@ -81,16 +81,19 @@ const Editor = ({
       formData.set('image', image);
       formData.set('_csrf', csrfToken);
 
-      const response = await fetch('http://localhost:4000/browser/image', {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          Accept: 'application/json',
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: formData,
-      });
+      const response = await fetch(
+        'https://api.simplecrudboard.click/browser/image',
+        {
+          method: 'POST',
+          mode: 'cors',
+          credentials: 'include',
+          headers: {
+            Accept: 'application/json',
+            Authorization: `Bearer ${accessToken}`,
+          },
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
         alert('이미지 업로드에 실패했습니다');

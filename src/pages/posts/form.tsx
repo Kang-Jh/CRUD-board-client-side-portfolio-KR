@@ -42,7 +42,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   const response = await nodeFetch(
-    `http://localhost:4000/browser/posts/${postId}`
+    `https://api.simplecrudboard.click/browser/posts/${postId}`
   );
 
   if (response.status === 404) {
@@ -151,8 +151,8 @@ const PostForm = ({
 
           const response = await fetch(
             initialPostId
-              ? `http://localhost:4000/browser/posts/${initialPostId}`
-              : 'http://localhost:4000/browser/posts',
+              ? `https://api.simplecrudboard.click/browser/posts/${initialPostId}`
+              : 'https://api.simplecrudboard.click/browser/posts',
             {
               method: initialPostId ? 'PUT' : 'POST',
               headers,

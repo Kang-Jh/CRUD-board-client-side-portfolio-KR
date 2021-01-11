@@ -13,7 +13,9 @@ import { ko } from 'date-fns/locale';
 
 const { POSTS_GET_LIMIT } = constants;
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const response = await nodeFetch(`http://localhost:4000/browser/posts`);
+  const response = await nodeFetch(
+    `https://api.simplecrudboard.click/browser/posts`
+  );
 
   if (!response.ok) {
     return {
@@ -55,7 +57,7 @@ const HomePage = ({ initialData }: { initialData: Post[] }) => {
     }
 
     const response = await fetch(
-      `http://localhost:4000/browser/posts?cursor=${cursor}&offset=${offset}`
+      `https://api.simplecrudboard.click/browser/posts?cursor=${cursor}&offset=${offset}`
     );
 
     if (response.ok) {

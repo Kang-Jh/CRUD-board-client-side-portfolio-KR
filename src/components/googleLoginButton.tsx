@@ -40,21 +40,24 @@ export default function GoogleLoginButton({
           );
 
           const id_token = googleUser.getAuthResponse().id_token;
-          const response = await fetch('http://localhost:4000/browser/signin', {
-            method: 'post',
-            mode: 'cors',
-            credentials: 'include',
-            headers: {
-              Accept: 'application/json',
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              id: id_token,
-              _csrf: csrfToken,
-              oauthServer: 'google',
-            }),
-            signal,
-          });
+          const response = await fetch(
+            'https://api.simplecrudboard.click/browser/signin',
+            {
+              method: 'post',
+              mode: 'cors',
+              credentials: 'include',
+              headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                id: id_token,
+                _csrf: csrfToken,
+                oauthServer: 'google',
+              }),
+              signal,
+            }
+          );
 
           const json: {
             user: Partial<User>;

@@ -12,7 +12,9 @@ import { AccessTokenResponseBody } from '../types/ResponseBody';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const [accessToken, setAccessToken] = useState<AccessToken>('');
-  const csrfToken = useCsrfToken('http://localhost:4000/browser/csrfToken');
+  const csrfToken = useCsrfToken(
+    'https://api.simplecrudboard.click/browser/csrfToken'
+  );
   const [user, setUser] = useState<Partial<User>>({
     _id: '',
     username: '',
@@ -22,7 +24,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     const getAccessToken = async () => {
       const response = await fetch(
-        'http://localhost:4000/browser/accessToken',
+        'https://api.simplecrudboard.click/browser/accessToken',
         {
           headers: {
             Accept: 'application/json',
@@ -54,7 +56,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 
     const getSignedInUser = async () => {
       const response = await fetch(
-        'http://localhost:4000/browser/users/signedInUser',
+        'https://api.simplecrudboard.click/browser/users/signedInUser',
         {
           headers: {
             Accept: 'application/json',

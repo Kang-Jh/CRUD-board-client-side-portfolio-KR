@@ -36,7 +36,7 @@ const SignInLink = () => {
             // FIXME remove this if statement in production
             if (user.username === 'Fake Account') {
               const response = await fetch(
-                'http://localhost:4000/browser/signout',
+                'https://api.simplecrudboard.click/browser/signout',
                 {
                   method: 'POST',
                   mode: 'cors',
@@ -63,7 +63,7 @@ const SignInLink = () => {
               await Promise.all([
                 gapi.auth2.getAuthInstance(),
                 promisifyFacebookGetLoginStatus(FB),
-                fetch('http://localhost:4000/browser/signout', {
+                fetch('https://api.simplecrudboard.click/browser/signout', {
                   method: 'POST',
                   mode: 'cors',
                   credentials: 'include',
