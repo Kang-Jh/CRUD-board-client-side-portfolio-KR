@@ -154,7 +154,7 @@ const PostForm = ({
               ? `https://api.simplecrudboard.click/browser/posts/${initialPostId}`
               : 'https://api.simplecrudboard.click/browser/posts',
             {
-              method: initialPostId ? 'PUT' : 'POST',
+              method: initialPostId ? 'PATCH' : 'POST',
               headers,
               body: formData,
               credentials: 'include',

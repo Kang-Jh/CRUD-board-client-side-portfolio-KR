@@ -236,7 +236,7 @@ const PostPage = ({ data }: { data: Post }) => {
             commentId ?? ''
           }`,
           {
-            method: commentId ? 'PUT' : 'POST',
+            method: commentId ? 'PATCH' : 'POST',
             mode: 'cors',
             credentials: 'include',
             headers: {
