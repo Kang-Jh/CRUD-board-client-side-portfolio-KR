@@ -89,7 +89,7 @@ const HomePage = ({ initialData }: { initialData: Post[] }) => {
             return (
               <li
                 key={post._id}
-                id={`post-${index + 1}`}
+                id={`post-${index}`}
                 className="flex flex-col sm:flex-row sm:justify-center items-center sm:h-48 mb-4 sm:mb-6"
               >
                 <h3 className="sm:w-60 md:w-96 sm:p-1 sm:mr-4 text-base md:text-lg text-center sm:text-left truncate order-2">
