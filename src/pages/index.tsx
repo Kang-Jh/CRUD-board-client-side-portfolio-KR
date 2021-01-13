@@ -42,13 +42,7 @@ const dataReducer = (state: Post[], action: { payload: Post[] }): Post[] => {
 
 const HomePage = ({ initialData }: { initialData: Post[] }) => {
   const { accessToken } = useContext(AccessTokenContext);
-  const [data, setData] = useReducer(
-    dataReducer,
-    initialData.map((post) => ({
-      ...post,
-      createdAt: new Date(post.createdAt),
-    }))
-  );
+  const [data, setData] = useReducer(dataReducer, initialData);
   const { cursor, offset } = useCursorAndOffset(data, 'postNumber');
 
   const fetchMore = useCallback(async () => {
@@ -123,7 +117,7 @@ const HomePage = ({ initialData }: { initialData: Post[] }) => {
                   {post.author.username}
                 </div>
                 <div className="sm:w-36 md:w-40 sm:p-1 sm:mr-4 text-base md:text-lg text-center order-4">
-                  {formatDistanceToNow(post.createdAt, {
+                  {formatDistanceToNow(new Date(post.createdAt), {
                     locale: ko,
                     addSuffix: true,
                   })}
