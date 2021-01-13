@@ -67,7 +67,7 @@ const HomePage = ({ initialData }: { initialData: Post[] }) => {
         <title>홈</title>
       </Head>
 
-      <article>
+      <div>
         <h2 className="sr-only">전체 글 목록</h2>
         {accessToken && (
           <div className="text-right pr-4 sm:pr-6 md:pr-12 lg:pr-24 xl:pr-36 2xl:pr-48 mb-8">
@@ -126,7 +126,7 @@ const HomePage = ({ initialData }: { initialData: Post[] }) => {
             );
           }}
         />
-      </article>
+      </div>
     </Fragment>
   );
 };
