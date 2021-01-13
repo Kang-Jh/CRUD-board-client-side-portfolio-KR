@@ -123,7 +123,11 @@ export default function SubCommentsList({
       </ol>
 
       {comments.length > 0
-        ? !noMore && <button onClick={fetchMoreCallback}>더 보기</button>
+        ? !noMore && (
+            <button className="text-blue-600" onClick={fetchMoreCallback}>
+              더 보기
+            </button>
+          )
         : null}
     </div>
   );
