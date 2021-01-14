@@ -1,6 +1,9 @@
 # CRUD Board Portfolio - Client-side
 
 [CRUD Board](https://www.simplecrudboard.click)
+클라이언트 사이드에도 AWS 람다가 사용되고, 서버 사이드에도 AWS 람다가 사용됩니다. 이로 인해 초기 페이지 로드 시간이 길 수 있습니다.
+
+또한 서버 측에서 앱 이니셜라이즈를 해야 할 수도 있기 때문에 요청된 HTTP 리퀘스트 처리에 시간이 걸릴 수 있습니다.
 
 이 프로젝트는 포트폴리오용 게시판 프로젝트의 클라이언트 사이드를 구현한 프로젝트입니다.
 [서버 사이드 프로젝트](https://github.com/Kang-Jh/CRUD-board-server-side-portfolio-KR)와 연동되어 있습니다.
