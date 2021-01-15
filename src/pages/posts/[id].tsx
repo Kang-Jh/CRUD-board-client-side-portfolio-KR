@@ -22,17 +22,27 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     `https://api.simplecrudboard.click/browser/comments?postId=${postId}`
   );
 
-  const awaitedPostResponse = await postResponse;
-  const awaitedCommentsResponse = await commentsResponse;
+  const awaittedPostResponse = await postResponse;
+  const awaittedCommentsResponse = await commentsResponse;
 
-  if (awaitedPostResponse.status === 404) {
+  if (awaittedPostResponse.status === 404) {
     return {
       notFound: true,
     };
   }
-  const post: Post = await awaitedPostResponse.json();
 
-  if (!awaitedCommentsResponse.ok) {
+  if (!awaittedPostResponse.ok) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
+  const post: Post = await awaittedPostResponse.json();
+
+  if (!awaittedCommentsResponse.ok) {
     return {
       props: {
         data: { ...post, comments: [] },
@@ -40,7 +50,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   }
 
-  const comments = await awaitedCommentsResponse.json();
+  const comments = await awaittedCommentsResponse.json();
 
   return {
     props: {

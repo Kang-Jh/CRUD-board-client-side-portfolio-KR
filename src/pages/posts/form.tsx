@@ -51,6 +51,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   }
 
+  if (!response.ok) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
   const json: Post = await response.json();
 
   return {
