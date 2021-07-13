@@ -7,6 +7,6 @@ export interface User extends BaseData {
   oauthServer: string; // oauthServer is what provider users use to social log in
   email: string;
   username: string;
-  posts?: Partial<Post>[];
-  comments?: Partial<Comment>[];
+  posts?: (Required<Pick<Post, '_id'>> & Partial<Post>)[];
+  comments?: (Required<Pick<Comment, '_id'>> & Partial<Comment>)[];
 }

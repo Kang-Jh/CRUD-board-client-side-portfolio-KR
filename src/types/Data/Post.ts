@@ -6,7 +6,7 @@ import { Comment } from './Comment';
 export interface Post extends BaseData {
   postNumber: number;
   title: string;
-  author: Partial<User>;
+  author: Required<Pick<User, '_id'>> & Partial<User>;
   thumbnail?: Image;
   contents: string;
   images: Image[];
